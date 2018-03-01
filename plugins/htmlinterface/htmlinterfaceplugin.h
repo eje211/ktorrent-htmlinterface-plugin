@@ -25,9 +25,11 @@
 #include <interfaces/torrentactivityinterface.h>
 #include <interfaces/plugin.h>
 #include <QtGlobal>
+#include "webserver.h"
+
 
 namespace kt
-{
+{  
     class HtmlInterfacePlugin: public Plugin, public ViewListener
     {
         Q_OBJECT
@@ -55,7 +57,9 @@ namespace kt
 //         void torrentAdded(bt::TorrentInterface* tc);
 //         void torrentRemoved(bt::TorrentInterface* tc);
 // 
-//     private:
+    private:
+        QThread* thread;
+        WebServer * worker;
 //         QAction * download_order_action;
 //         bt::PtrMap<bt::TorrentInterface*, HtmlInterfaceManager> managers;
      };

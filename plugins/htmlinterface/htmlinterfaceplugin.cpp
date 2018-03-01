@@ -23,6 +23,7 @@
 #include <KLocalizedString>
 #include <KMainWindow>
 #include <KPluginFactory>
+#include <QThread>
 
 #include "htmlinterfaceplugin.h"
 // #include <util/fileops.h>
@@ -31,20 +32,24 @@
 #include <interfaces/torrentinterface.h>
 // #include <interfaces/torrentfileinterface.h>
 #include <torrent/queuemanager.h>
+#include "mongoose.h"
 // #include "htmlinterfacemanager.h"
 // #include "htmlinterfacedialog.h"
+#include "webserver.h"
+
 
 
 K_PLUGIN_FACTORY_WITH_JSON(ktorrent_htmlinterface, "ktorrent_htmlinterface.json", registerPlugin<kt::HtmlInterfacePlugin>();)
 
 using namespace bt;
+using namespace std;
 
 namespace kt
 {
     HtmlInterfacePlugin::HtmlInterfacePlugin(QObject* parent, const QVariantList &args): Plugin(parent)
     {
         Q_UNUSED(args);
-        qInfo("I've been constructed");
+        qInfo("I've still been constructed!");
 //         download_order_action = new QAction(QIcon::fromTheme(QStringLiteral("view-sort-ascending")), i18n("File Download Order"), this);
 //         connect(download_order_action, &QAction::triggered, this, &HtmlInterfacePlugin::showHtmlInterfaceDialog);
 //         actionCollection()->addAction(QStringLiteral("download_order"), download_order_action);
@@ -65,6 +70,16 @@ namespace kt
 
     void HtmlInterfacePlugin::load()
     {
+        qInfo("I've been loaded");
+        thread = new QThread;
+        worker = new WebServer();
+        worker->moveToThread(thread);
+//         connect(worker, SIGNAL (error(QString)), this, SLOT (errorString(QString)));
+        connect(thread, SIGNAL (started()), worker, SLOT (process()));
+        connect(worker, SIGNAL (finished()), thread, SLOT (quit()));
+        connect(worker, SIGNAL (finished()), worker, SLOT (deleteLater()));
+        connect(thread, SIGNAL (finished()), thread, SLOT (deleteLater()));
+        thread->start();
 //         TorrentActivityInterface* ta = getGUI()->getTorrentActivity();
 //         ta->addViewListener(this);
 //         connect(getCore(), SIGNAL(torrentAdded(bt::TorrentInterface*)), this, SLOT(torrentAdded(bt::TorrentInterface*)));
@@ -139,5 +154,7 @@ namespace kt
 //         managers.erase(tc);
 //     }
 }
+
+
 
 #include <htmlinterfaceplugin.moc>

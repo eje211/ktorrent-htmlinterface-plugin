@@ -1,4 +1,4 @@
-set(kthtmlinterfaceplugin_SRC htmlinterfaceplugin.cpp)
+set(kthtmlinterfaceplugin_SRC htmlinterfaceplugin.cpp mongoose.c webserver.cpp)
 
 ki18n_wrap_ui(kthtmlinterfaceplugin_SRC htmlinterfacewidget.ui)
 
