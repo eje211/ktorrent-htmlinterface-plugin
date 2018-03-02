@@ -1,27 +1,11 @@
-#include "webserver.h"
 #include <iostream>
+#include "libhttpserver/libhttpserver.h"
+#include "webserver.h"
 
 using namespace std;
 
-extern "C"
-{    
-    static void httpeventhandler(struct mg_connection *c, int ev, void *ev_data) {
-        cout << "Event:    " << ev << endl;
-        if (ev == MG_EV_HTTP_REQUEST)
-        {
-            cout << "Response: " << ((struct http_message *) ev_data)->resp_code << endl;
-            cout << "page!" << endl;
-//             struct mg_serve_http_opts opts;
-// 
-//             memset(&opts, 0, sizeof(opts));  // Reset all options to defaults
-//             opts.document_root = "/home/eje211/src/ktorrent/plugins/htmlinterface/";       // Serve files from the current directory
-// 
-//             mg_serve_http(c, (struct http_message *) ev_data, opts);
-//             cout << ((struct http_message *) ev_data)->body.p << endl;
-        }
-    }
+using namespace rs::httpserver;
 
-}
 
 namespace kt {
     WebServer::WebServer()
@@ -31,17 +15,41 @@ namespace kt {
     
     WebServer::~WebServer()
     {
-        mg_mgr_free(&mgr);
     }
 
     void WebServer::process()
     {
-        struct mg_connection *c;
+        // the server will listen on all IPs on port 8880
+        auto server = HttpServer::Create("0.0.0.0", 8880);
+        
+        // a lambda function which handles the request
+        auto func = [](socket_ptr socket, request_ptr request, response_ptr response) {
+            // get the request uri
+            auto uri = request->getUri();
+            cout << uri << endl;
+            
+            if (uri == "/") {
+                // the uri was just /, redirect to /index.html
+                response->Redirect("/index.html");
+            } else {
+                // use the uri file extension to determine the content type
+                auto contentType = MimeTypes::GetContentType(uri);
 
-        mg_mgr_init(&mgr, NULL);
-        c = mg_bind(&mgr, "8880", httpeventhandler);
-        while (true) {
-            mg_mgr_poll(&mgr, 1000);
-        }
+                // we only respond if we got a content type
+                if (contentType) {
+                    // the content files are in the www sub-directory
+                    uri = "www" + uri;
+
+                    // open a stream on the file
+                    FileStream stream(uri);
+                    if (stream) {
+                        // respond with the contents of the file
+                        response->setContentType(contentType.get()).Send(stream);
+                    }
+                }
+            }
+        };
+        server->Start(func);
     }
+    
 }

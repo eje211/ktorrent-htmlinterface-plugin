@@ -3,7 +3,6 @@
 
 #include <QtGlobal>
 #include <QObject>
-#include "mongoose.h"
 
 namespace kt
 {
@@ -19,7 +18,6 @@ namespace kt
         void finished();
         void error(QString err);
     private:
-        mg_mgr mgr;
     };
 }
 

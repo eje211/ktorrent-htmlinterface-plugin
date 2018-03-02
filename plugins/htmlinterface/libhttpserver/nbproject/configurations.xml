@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>chunked_request_stream.h</itemPath>
+      <itemPath>chunked_response_stream.h</itemPath>
+      <itemPath>config.h</itemPath>
+      <itemPath>exceptions.h</itemPath>
+      <itemPath>file_stream.h</itemPath>
+      <itemPath>gzip_response_stream.h</itemPath>
+      <itemPath>header_buffer.h</itemPath>
+      <itemPath>header_key_comparer.h</itemPath>
+      <itemPath>headers.h</itemPath>
+      <itemPath>httpserver.h</itemPath>
+      <itemPath>libhttpserver.h</itemPath>
+      <itemPath>mime_types.h</itemPath>
+      <itemPath>multipart_response_stream.h</itemPath>
+      <itemPath>null_stream.h</itemPath>
+      <itemPath>query_string.h</itemPath>
+      <itemPath>readable_string_stream.h</itemPath>
+      <itemPath>request.h</itemPath>
+      <itemPath>request_headers.h</itemPath>
+      <itemPath>request_router.h</itemPath>
+      <itemPath>request_stream.h</itemPath>
+      <itemPath>response.h</itemPath>
+      <itemPath>response_headers.h</itemPath>
+      <itemPath>response_stream.h</itemPath>
+      <itemPath>socket.h</itemPath>
+      <itemPath>socket_timeval_option.h</itemPath>
+      <itemPath>stream.h</itemPath>
+      <itemPath>types.h</itemPath>
+      <itemPath>writable_string_stream.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>chunked_request_stream.cpp</itemPath>
+      <itemPath>chunked_response_stream.cpp</itemPath>
+      <itemPath>config.cpp</itemPath>
+      <itemPath>file_stream.cpp</itemPath>
+      <itemPath>gzip_response_stream.cpp</itemPath>
+      <itemPath>header_buffer.cpp</itemPath>
+      <itemPath>headers.cpp</itemPath>
+      <itemPath>httpserver.cpp</itemPath>
+      <itemPath>mime_types.cpp</itemPath>
+      <itemPath>multipart_response_stream.cpp</itemPath>
+      <itemPath>query_string.cpp</itemPath>
+      <itemPath>request.cpp</itemPath>
+      <itemPath>request_headers.cpp</itemPath>
+      <itemPath>request_router.cpp</itemPath>
+      <itemPath>request_stream.cpp</itemPath>
+      <itemPath>response.cpp</itemPath>
+      <itemPath>response_stream.cpp</itemPath>
+      <itemPath>socket.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="Chunked Request Stream Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/chunked_request_stream_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7"
+                     displayName="Chunked Response Stream Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/chunked_response_stream_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4"
+                     displayName="File Stream Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/file_stream_tests.cpp</itemPath>
+        <itemPath>rfc2616.txt</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3"
+                     displayName="MIME Type Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/mime_type_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f9"
+                     displayName="Null Stream Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/null_stream_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f5"
+                     displayName="Query String Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/query_string_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="Readable String Stream Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/readable_string_stream_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f8"
+                     displayName="Request Header Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/request_header_tests.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6"
+                     displayName="Writable String Stream Tests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/writable_string_stream_tests.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+          <commandLine>$(COVERAGE_FLAGS)</commandLine>
+        </ccTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libhttpserver.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="chunked_request_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chunked_request_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chunked_response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chunked_response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="config.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="exceptions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles">
+        <ccTool>
+          <incDir>
+            <pElem>../../externals/installed/include</pElem>
+          </incDir>
+          <commandLine>$(COVERAGE_FLAGS)</commandLine>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>boost_thread</linkerLibLibItem>
+            <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_date_time</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>boost_regex</linkerLibLibItem>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+            <linkerLibLibItem>z</linkerLibLibItem>
+          </linkerLibItems>
+          <commandLine>../../externals/installed/lib/libgtest_main.a ../../externals/installed/lib/libgtest.a $(COVERAGE_FLAGS)</commandLine>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f1">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f7">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f7</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f8">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f8</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f9">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f9</output>
+        </linkerTool>
+      </folder>
+      <item path="file_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="file_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="gzip_response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="gzip_response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="header_buffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="header_buffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="header_key_comparer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="headers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="httpserver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="httpserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libhttpserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mime_types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="mime_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="multipart_response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="multipart_response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="null_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="query_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="query_string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="readable_string_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request_headers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request_headers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request_router.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request_router.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="response.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="response.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="response_headers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="rfc2616.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="socket.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="socket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="socket_timeval_option.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/chunked_request_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/chunked_response_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/file_stream_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/mime_type_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/null_stream_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/query_string_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/readable_string_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/request_header_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/writable_string_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="writable_string_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <standard>8</standard>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libhttpserver.a</output>
+        </archiverTool>
+      </compileType>
+      <item path="chunked_request_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chunked_request_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chunked_response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chunked_response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="config.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="config.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="exceptions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles">
+        <ccTool>
+          <incDir>
+            <pElem>../../externals/installed/include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>boost_thread</linkerLibLibItem>
+            <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_date_time</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>boost_regex</linkerLibLibItem>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+            <linkerLibLibItem>z</linkerLibLibItem>
+          </linkerLibItems>
+          <commandLine>../../externals/installed/lib/libgtest_main.a ../../externals/installed/lib/libgtest.a</commandLine>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f1">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f4">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f4</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f5">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f5</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f7">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f7</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f8">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f8</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f9">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f9</output>
+        </linkerTool>
+      </folder>
+      <item path="file_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="file_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="gzip_response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="gzip_response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="header_buffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="header_buffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="header_key_comparer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="headers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="httpserver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="httpserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libhttpserver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="mime_types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="mime_types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="multipart_response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="multipart_response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="null_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="query_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="query_string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="readable_string_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request_headers.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request_headers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request_router.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request_router.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="request_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="request_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="response.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="response.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="response_headers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="response_stream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="response_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="rfc2616.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="socket.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="socket.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="socket_timeval_option.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/chunked_request_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/chunked_response_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/file_stream_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/mime_type_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/null_stream_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/query_string_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/readable_string_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/request_header_tests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/writable_string_stream_tests.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="writable_string_stream.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
