@@ -1,8 +1,10 @@
-set(kthtmlinterfaceplugin_SRC htmlinterfaceplugin.cpp mongoose.c webserver.cpp)
+set(kthtmlinterfaceplugin_SRC htmlinterfaceplugin.cpp mongoose.c webserver.cpp torrentlistgenerator.cpp)
 
 ki18n_wrap_ui(kthtmlinterfaceplugin_SRC htmlinterfacewidget.ui)
 
 add_library(ktorrent_htmlinterface MODULE ${kthtmlinterfaceplugin_SRC})
+
+add_subdirectory(html)
 
 kcoreaddons_desktop_to_json(ktorrent_htmlinterface  ktorrent_htmlinterface.desktop)
 

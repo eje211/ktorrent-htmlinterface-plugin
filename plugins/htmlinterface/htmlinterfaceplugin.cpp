@@ -3,6 +3,9 @@
  *   joris.guisson@gmail.com                                               *
  *   ivasic@gmail.com                                                      *
  *                                                                         *
+ *   Copyright (C) 2018 by Emmanuel Eytan                                  *
+ *   eje211@gmail.com                                                      *            
+ *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
@@ -71,8 +74,9 @@ namespace kt
     void HtmlInterfacePlugin::load()
     {
         qInfo("I've been loaded");
+        HtmlInterfacePlugin::instance = this;
         thread = new QThread;
-        worker = new WebServer();
+        worker = new WebServer(getCore());
         worker->moveToThread(thread);
 //         connect(worker, SIGNAL (error(QString)), this, SLOT (errorString(QString)));
         connect(thread, SIGNAL (started()), worker, SLOT (process()));
