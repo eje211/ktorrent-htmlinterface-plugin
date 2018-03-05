@@ -22,53 +22,42 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#ifndef KTHTMLINTERFACEPLUGIN_H
-#define KTHTMLINTERFACEPLUGIN_H
+#ifndef KTTORRENTLISTXMLGENERATOR_H
+#define KTTORRENTLISTXMLGENERATOR_H
 
-#include <util/ptrmap.h>
-#include <interfaces/torrentactivityinterface.h>
-#include <interfaces/plugin.h>
-#include <QtGlobal>
-#include "webserver.h"
+#include <util/constants.h>
+#include <interfaces/torrentinterface.h>
 
+class QXmlStreamWriter;
+
+using namespace bt;
 
 namespace kt
-{  
-    class HtmlInterfacePlugin: public Plugin, public ViewListener
-    {
-        Q_OBJECT
-    public:
-        HtmlInterfacePlugin(QObject* parent, const QVariantList& args);
-        ~HtmlInterfacePlugin();
+{
+    class CoreInterface;
 
-        bool versionCheck(const QString& version) const override;
-        void load() override;
-        void unload() override;
-        void currentTorrentChanged(bt::TorrentInterface* tc) override;
-        
-        HtmlInterfacePlugin * instance;
-//         QString parentPart() const override {return QStringLiteral("torrentactivity");}
-// 
-//         /// Get the download order manager for a torrent (returns 0 if none exists)
-//         HtmlInterfaceManager* manager(bt::TorrentInterface* tc);
-// 
-//         /// Create a manager for a torrent
-//         HtmlInterfaceManager* createManager(bt::TorrentInterface* tc);
-// 
-//         /// Destroy a manager
-//         void destroyManager(bt::TorrentInterface* tc);
-// 
-//     private slots:
-//         void showHtmlInterfaceDialog();
-//         void torrentAdded(bt::TorrentInterface* tc);
-//         void torrentRemoved(bt::TorrentInterface* tc);
-// 
+    /**
+        Content generator which generates XML with all torrents in it.
+    */
+    class TorrentListGenerator
+    {
+    public:
+        TorrentListGenerator(CoreInterface* core);
+        virtual ~TorrentListGenerator();
+
+        void get(char ** str_p, int * size);
+        virtual void post(char * json);
+        // virtual void post(HttpClientHandler* hdlr, const QHttpRequestHeader& hdr, const QByteArray& data);
+
+
     private:
-        QThread* thread;
-        WebServer * worker;
-//         QAction * download_order_action;
-//         bt::PtrMap<bt::TorrentInterface*, HtmlInterfaceManager> managers;
-     };
+        CoreInterface* core;        
+        TorrentInterface * getTorrentFromHash(QString hash);
+        const static SHA1Hash * QStringToSHA1Hash(QString qString);
+        Uint8 static char2int(char input);
+        void static hex2bin(const char * src, Uint8 * target);q
+
+    };
 
 }
 

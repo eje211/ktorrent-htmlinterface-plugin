@@ -1,29 +1,10 @@
-set(kthtmlinterfaceplugin_SRC htmlinterfaceplugin.cpp webserver.cpp)
+set(kthtmlinterfaceplugin_SRC htmlinterfaceplugin.cpp mongoose.c webserver.cpp torrentlistgenerator.cpp)
 
 ki18n_wrap_ui(kthtmlinterfaceplugin_SRC htmlinterfacewidget.ui)
 
 add_library(ktorrent_htmlinterface MODULE ${kthtmlinterfaceplugin_SRC})
 
-set(Boost_USE_STATIC_LIBS OFF)
-set(Boost_USE_MULTITHREADED ON)  
-# set(Boost_USE_STATIC_RUNTIME OFF)
-
-find_package(Boost REQUIRED COMPONENTS system filesystem thread regex date_time)
-
-if(Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-    ADD_DEFINITIONS("-DHAS_BOOST")
-endif()
-
-find_library(Zlib libz.a REQUIRED)
-
-if(Zlib_FOUND)
-    include_directories(${Zlib_INCLUDE_DIRS})
-endif()
-
-find_package(Threads)
-
-add_subdirectory(libhttpserver)
+add_subdirectory(html)
 
 kcoreaddons_desktop_to_json(ktorrent_htmlinterface  ktorrent_htmlinterface.desktop)
 
